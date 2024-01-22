@@ -131,3 +131,46 @@ verwachtingen.
 
 Om de waarschuwingen te verhelpen kunnen we een functie prototype declareren
 en een return type noteren.
+
+# Opdracht 1.3
+
+# Stap 1
+
+Als men goed naar de code kijkt wordt duidelijk dat het volgende de verwachte
+uitvoer is.
+
+```
+value == 0
+value = 1
+```
+
+Dit komt omdat `value == 0` waar is bij het eerste if statement en bij het
+tweede if statement wordt de waarde `1` aan `value` gegeven welke vervolgens
+door het if statement gebruikt wordt en in c is elke waarde behalve `0` true
+in een if statement. Dit is meestal natuurlijk niet de bedoeling en
+waarschijnlijk wordt er hier dus `value == 1` bedoeld in plaats van `value =
+1`. Clang geeft voor deze fout standaard een warning en GCC doet het zelfde
+met `-Wall`.
+
+# Stap 2
+
+Er worden geen warnings of errors verwacht en de uitvoer zal als volgt zijn
+(zolang het probleem in [Stap 1](#stap-1) opgelost is):
+
+```
+value == 0
+value appears to be false
+```
+
+Dit betekent dat in C de waarde `0` false is.
+
+# Stap 3 & 4
+
+De uitvoer is nu:
+
+```
+value == 0
+value appears to be true
+```
+
+Dit betekent dat in C elke waarde behalve `0` true is.
