@@ -20,3 +20,5 @@ add_executable(les2_2 les2/les2_2.c)
 add_executable(les2_3 les2/les2_3.c)
 
 add_executable(les3_1 les3/les3_1.c)
+add_executable(les3_2 les3/les3_2/main.c les3/les3_2/rectangle.c
+les3/les3_2/input.c)
