@@ -16,3 +16,4 @@ add_executable(les1_2 les1/les1_2.c)
 add_executable(les1_3 les1/les1_3.c)
 
 add_executable(les2_1 les2/les2_1/main.c les2/les2_1/math.c)
+add_executable(les2_2 les2/les2_2.c)
