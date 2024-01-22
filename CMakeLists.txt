@@ -12,3 +12,4 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 add_executable(les1_1 les1/les1_1.c)
+add_executable(les1_2 les1/les1_2.c)
