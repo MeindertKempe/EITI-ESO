@@ -7,6 +7,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wvla")
+	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Og -fsanitize=address -fsanitize=undefined")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W4")
 endif()
