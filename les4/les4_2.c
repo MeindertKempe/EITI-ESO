@@ -9,7 +9,7 @@ typedef struct node {
 void print_list(node_t *head) {
 	/* Traverse list, printing each value */
 	while (head) {
-		printf("%x\n", head->val);
+		printf("%d (%x)\n", head->val, head->val);
 		head = head->next;
 	}
 }
@@ -47,6 +47,8 @@ void list_free(node_t *head) {
 	}
 }
 
+/* We give a pointer to a pointer so that we can modify the value of the
+ * pointer for the caller when freeing the head node.   */
 int pop(node_t **head) {
 	int retval;
 	node_t *next_node;
@@ -71,19 +73,20 @@ int remove_by_value(node_t **head, int val) {
 }
 
 int main(void) {
-	/* Initialise and fill list with pseudo random numbers */
+	/* Initialise and fill list with pseudo random numbers. */
 	node_t *test_list = list_init(rand());
-#define LIST_SIZE 3
-	for (int i = 0; i < LIST_SIZE - 1; ++i) add_node(test_list, rand());
+	for (int i = 0; i < 3; ++i) add_node(test_list, rand());
 	add_node(test_list, 0xDEADBEEF);
-	for (int i = 0; i < LIST_SIZE - 1; ++i) add_node(test_list, rand());
+	for (int i = 0; i < 3; ++i) add_node(test_list, rand());
 
 	/* Print list. */
 	print_list(test_list);
 
+	/* Remove value from list. */
 	remove_by_value(&test_list, 0xDEADBEEF);
 	printf("\n");
 
+	/* Print list. */
 	print_list(test_list);
 
 	/* Free list. */
