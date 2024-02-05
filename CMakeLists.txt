@@ -34,3 +34,6 @@ add_executable(les4_2 les4/les4_2.c)
 add_executable(les4_3 les4/les4_3.c)
 
 add_executable(les5_1 les5/les5_1/main.c les5/les5_1/stack.c les5/les5_1/teststack.c)
+add_executable(les5_2_s les5/les5_2/MenuSimple/MenuSimple.c)
+add_executable(les5_2_ma les5/les5_2/MenuMoreAdvanced/MenuMoreAdvanced.c)
+add_executable(les5_2_a les5/les5_2/MenuAdvanced/MenuAdvanced.c)
