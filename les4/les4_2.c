@@ -29,6 +29,7 @@ node_t *list_init(int val) {
 }
 
 void add_node(node_t *head, int val) {
+	if (!head) return;
 	/* Traverse until the end of the list. */
 	while (head->next) head = head->next;
 	node_t *new = calloc(1, sizeof *new);
